@@ -9,7 +9,7 @@ function sumAll(arr) {
   }
   return total.reduce(function(previousValue, currentValue, currentIndex, array) {
   return previousValue + currentValue;
-});
+  });
 }
 
 sumAll([1, 4]);
