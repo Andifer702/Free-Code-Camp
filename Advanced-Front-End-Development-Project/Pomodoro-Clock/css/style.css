@@ -1,0 +1,43 @@
+body{
+  background-color: #888E86;
+}
+
+h1{
+  text-align: center;
+  color: #CDCDCD;
+  text-shadow: 5px 2px 3px black;
+  font-family: Tiems New Roman;
+  font-size: 5em;
+}
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+  font-family:san-serif;
+  color: black;
+  
+}
+.btn {
+  font:bold 150% san-serif;
+  color :white;
+  height: 50px;
+  width: 60px;
+  padding-bottom:10px;
+  border-color:white;
+  background-color:#6E6E6E;
+  border-radius:15px;
+  
+}
+
+.row {
+  text-align:cetner;
+  
+}
+h3 {
+  text-align: center;
+  padding-top:50px;
+  padding-bottom:20px;
+  font-family:Times New Roam;
+  font-size: 100px;
+  color: #BFBFBF;
+}
