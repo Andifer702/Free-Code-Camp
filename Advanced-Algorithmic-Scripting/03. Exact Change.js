@@ -32,15 +32,17 @@ function checkCashRegister(price, cash, cid) {
         return 'Insufficient Funds';
       }
     }
-    else if (change/denom[j] > 1){
+    else if (change/denom[j] >= 1){
       var bill;
-      for (var k = 1; change > cid[j][1]; k++){
+      for (var k = 1; change/denom[j] >= 1 && drawerCash[j] > 0; k++){
         drawerCash[j] = drawerCash[j]- denom[j];
         change = change - denom[j];
+        change = change.toFixed(2);
         bill = k;
       }
-      if (cid[j][1] >= 0){
+      if (cid[j][1] > 0){
           cid[j][1] = denom[j]*bill;
+
           ans.push(cid[j]);
       }
       else {
@@ -50,5 +52,7 @@ function checkCashRegister(price, cash, cid) {
   }
   return ans;
 }
-
+//change = 96.74 drawerCash [100, 60, 20, 55, 90, 4.25, 3.10, 2.05, 1.01] 
 checkCashRegister(3.26, 100.00, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.10], ["QUARTER", 4.25], ["ONE", 90.00], ["FIVE", 55.00], ["TEN", 20.00], ["TWENTY", 60.00], ["ONE HUNDRED", 100.00]]);
+@Andifer702
+Commit changes
