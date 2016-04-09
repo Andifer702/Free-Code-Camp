@@ -26,3 +26,7 @@ function convert(str) {
 }
 
 convert("Hamburgers < Pizza < Tacos");
+//Credit to Rafael Rodriguez for reference and help
+//rafase282@gmail.com
+//http://www.freecodecamp.com/rafase282
+//*/
