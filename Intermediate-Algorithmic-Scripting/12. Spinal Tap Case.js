@@ -6,3 +6,7 @@ function spinalCase(str) {
 }
 
 spinalCase('thisIsSpinalTap');
+//Credit to Rafael Rodriguez for reference and help
+//rafase282@gmail.com
+//http://www.freecodecamp.com/rafase282
+//*/
