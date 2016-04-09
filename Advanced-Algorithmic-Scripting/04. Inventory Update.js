@@ -54,3 +54,7 @@ var newInv = [
 ];
 
 updateInventory([], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]]) ;
+//Credit to Rafael Rodriguez for reference and help
+//rafase282@gmail.com
+//http://www.freecodecamp.com/rafase282
+//*/
