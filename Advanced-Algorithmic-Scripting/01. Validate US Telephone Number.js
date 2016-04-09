@@ -7,3 +7,7 @@ function telephoneCheck(str) {
 
 
 telephoneCheck("1 555)555-5555");
+//Credit to Rafael Rodriguez for reference and help
+//rafase282@gmail.com
+//http://www.freecodecamp.com/rafase282
+//*/
