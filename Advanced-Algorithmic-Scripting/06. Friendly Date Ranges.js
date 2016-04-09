@@ -20,15 +20,16 @@ function makeFriendlyDates(arr) {
       return  n + 'rd';
     }
     else {
-      return n + 'th'
+      return n + 'th';
     }
   }
+  
   if (begDate.getTime() === endDate.getTime()){
     return [months[begMonth] + ' ' + corDate(begDays) + "," + ' ' + begYear];
   }
   
-  else if (begDate.getMonth() === endDate.getMonth() && begDate.getFullYear() === endDate.getFullYear()){
-    return [months[begDate.getUTCMonth()] + ' ' + corDate(begDays) ,  endDate.getUTCDate() + 'th'];
+  else if (begMonth === endMonth && begYear === endYear){
+    return [months[begDate.getUTCMonth()] + ' ' + corDate(begDays) ,  corDate(endDays)];
   }
 }
 
