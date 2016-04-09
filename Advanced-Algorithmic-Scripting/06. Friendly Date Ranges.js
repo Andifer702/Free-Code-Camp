@@ -4,11 +4,13 @@ function makeFriendlyDates(arr) {
   
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   
-  if (begDate == endDate){
-    return [months[begDate.getUTCMonth()] + ' ' + begDate.getUTCDate() + 'th' + "," + ' ' + begDate.getUTCFullYear()];
+  if (begDate.getTime() === endDate.getTime()){
+    return [months[begDate.getMonth()] + ' ' + begDate.getDate() + 'th' + "," + ' ' + begDate.getUTCFullYear()];
   }
-  return begDate;
- 
+  
+  else if (begDate.getMonth() === endDate.getMonth() && begDate.getFullYear() === endDate.getFullYear()){
+    return [months[begDate.getUTCMonth()] + ' ' + begDate.getUTCDate() + 'st' ,  endDate.getUTCDate() + 'th'];
+  }
 }
 
-makeFriendlyDates(["2018-01-13", "2018-01-13"]);
+makeFriendlyDates(["2016-07-01", "2016-07-04"]);
