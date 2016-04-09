@@ -33,3 +33,6 @@ function permAlone(str) {
 }
 
 permAlone('aab');
+
+//Credit to Gorka Hernandez @ GH Blog for help and guidance
+//www.gorkahernandez.com
