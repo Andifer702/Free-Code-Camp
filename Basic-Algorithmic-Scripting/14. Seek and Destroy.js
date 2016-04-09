@@ -9,3 +9,7 @@ function destroyer(arr) {
     return args.indexOf(element) === -1;
   });
 }
+//Credit to Rafael Rodriguez for reference and help
+//rafase282@gmail.com
+//http://www.freecodecamp.com/rafase282
+//*/
