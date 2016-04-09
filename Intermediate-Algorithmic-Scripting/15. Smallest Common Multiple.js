@@ -40,3 +40,4 @@ function smallestCommons(arr) {
   return lcmArr(arr);
 }
 
+//Referenced http://stackoverflow.com/questions/31302054/how-to-find-the-least-common-multiple-of-a-range-of-numbers
