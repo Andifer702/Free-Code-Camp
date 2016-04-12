@@ -7,6 +7,7 @@ function makeFriendlyDates(arr) {
       endMonth = endDate.getMonth(),
       begDays = begDate.getUTCDate(),
       endDays = endDate.getUTCDate(),
+      curDate = new Date();
       months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   
   function corDate(n){ //depending on the days, assign appropriate ordinal dates
@@ -36,7 +37,7 @@ function makeFriendlyDates(arr) {
     return [months[begMonth] + ' ' + corDate(begDays) + ', ' + begYear, months[endMonth] + ' ' + corDate(endDays)];
   }
   
-  else if (endYear - begYear === 1 && begMonth > endMonth) { //starts at current year and then ends within a year
+  else if (begYear === curDate.getFullYear() && begMonth >= endMonth && endYear - begYear < 2) { //starts at current year and then ends within a year
     return [months[begMonth] + ' ' + corDate(begDays), months[endMonth] + ' ' + corDate(endDays)];
   }
   
@@ -50,4 +51,4 @@ function makeFriendlyDates(arr) {
   
 }
 
-makeFriendlyDates(["2022-09-05", "2023-09-05"]);
+makeFriendlyDates(["2016-12-01", "2018-02-03"]);
