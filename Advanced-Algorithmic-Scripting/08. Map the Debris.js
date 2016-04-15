@@ -7,7 +7,13 @@ function orbitalPeriod(arr) {
     var a = Math.pow(arr[i].avgAlt, 3)/GM;
     newArr.push(a);
   }
-  return newArr;
+  var op = function(){
+    for (var j = 0; j < arr.length; j++){
+      this.name = arr[j].name;
+      this.orbitalPeriod = (2*p)*Math.sqrt(newArr[j]);
+    }
+  };
+  return op;
 }
 
 orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
