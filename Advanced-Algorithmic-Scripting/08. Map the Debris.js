@@ -4,11 +4,11 @@ function orbitalPeriod(arr) {
   var newArr = [];
   var p = Math.PI;
 
-  for (var prop in arr){     
+  for (var prop in arr){  
+    //assign orbitalPeriod as a new property with its value
      arr[prop].orbitalPeriod = Math.round((2*p)*Math.sqrt(Math.pow(arr[prop].avgAlt + earthRadius, 3)/GM));
+    // delete avgAlt property
     delete arr[prop].avgAlt;
   }
   return arr;
 }
-
-orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
