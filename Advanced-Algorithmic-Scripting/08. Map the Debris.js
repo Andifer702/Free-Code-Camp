@@ -12,3 +12,4 @@ function orbitalPeriod(arr) {
   }
   return arr;
 }
+thanks @Rafase282 @coded9 @anuragaryan for your help with Algorithm: Map the Debris
