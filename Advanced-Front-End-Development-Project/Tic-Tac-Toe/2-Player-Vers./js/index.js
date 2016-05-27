@@ -1,13 +1,16 @@
 $(document).ready(function() {
-  var user = '';
-  var ai= '';
+  var playerOne = '';
+  var playerTwo= '';
   var currentTurn= '';
   var moves = 0;
-
-  var handler = function() {
-    if (user === '') {
+  
+  //Function for 1 full turn
+  var oneTurn = function() {
+    //prevent game from initiating without choosing an icon
+    if (playerOne === '') {
       moves = 0;
     }
+    //prevent clicking the same box
     else if ($(this).text() === 'x' || $(this).text() === 'o'){
       moves = moves;
     }
@@ -19,23 +22,25 @@ $(document).ready(function() {
       next();
     };
   };
-
+  //clear and reset the board
   function clearBoard() {
     document.getElementById("o").disabled = false;
     document.getElementById("x").disabled = false;
     $('.box').text('');
     moves = 0;
-    user = '';
-    ai = '';
+    playerOne = '';
+    playerTwo = '';
   };
-
+  
+  //check for a draw
   function draw() {
     if (moves >= 9) {
       alert("Draw!");
       clearBoard();
     };
   };
-
+  
+  //check for a win
   function checkWin() {
     switch (true) {
       case $('#1').text() === currentTurn && $('#2').text() === currentTurn &&
@@ -74,8 +79,9 @@ $(document).ready(function() {
     }
   };
 
+  //alert the winner, then reset the board
   function alertWin() {
-    if (currentTurn == user) {
+    if (currentTurn == playerOne) {
       alert('Player 1 Win!');
       clearBoard();
     } else {
@@ -83,32 +89,35 @@ $(document).ready(function() {
       clearBoard();
     }
   };
-
+  
+  //player picks o
   $('#o').click(function() {
     document.getElementById("o").disabled = true;
     document.getElementById("x").disabled = true;
-    user = 'o';
+    playerOne = 'o';
     currentTurn = 'o';
-    ai = 'x';
+    playerTwo = 'x';
   });
 
+  //player picks x
   $('#x').click(function() {
     document.getElementById("o").disabled = true;
     document.getElementById("x").disabled = true;
-    user = 'x';
+    playerOne = 'x';
     currentTurn = 'x';
-    ai = 'o';
+    playerTwo = 'o';
   });
-
+  
+  //toggles turn
   function next() {
-    if (currentTurn == user) {
-      currentTurn = ai;
+    if (currentTurn == playerOne) {
+      currentTurn = playerTwo;
     } else {
-      currentTurn = user;
+      currentTurn = playerOne;
     }
   };
 
   $('#reset').on('click', clearBoard);
 
-  $('.box').on('click', handler);
+  $('.box').on('click', oneTurn);
 });
