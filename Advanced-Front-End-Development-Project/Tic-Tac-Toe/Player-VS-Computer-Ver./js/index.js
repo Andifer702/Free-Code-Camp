@@ -4,7 +4,9 @@ $(document).ready(function() {
   var currentTurn;
   var moves = 0;
   var position;
-
+  
+  clearBoard();
+  
   //function for one turn.
   var oneTurn = function() {
     //if user is not selected, game will not initiate
