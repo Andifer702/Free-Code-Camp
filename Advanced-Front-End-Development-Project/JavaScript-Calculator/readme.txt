@@ -1,2 +1,2 @@
 A javaScript calculator built as a part of advanced front end development project at Free Code Camp.
-The project can be found at https://codepen.io/andifer702/pen/gPddRK
+The project can be found at https://codepen.io/andifer702/details/gPddRK
