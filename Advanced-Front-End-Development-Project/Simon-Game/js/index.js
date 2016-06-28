@@ -14,7 +14,8 @@ $(document).ready(function() {
   var audio4 = new Audio(
     'http://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
   var audioBuzzer = new Audio('https://s3-us-west-2.amazonaws.com/guylemon/Buzzer.mp3');
-
+  
+  //play respective audio for the buttons
   function btnSound(audio) {
     switch (audio) {
       case 'btn1':
@@ -33,12 +34,13 @@ $(document).ready(function() {
         break;
     }
   };
-
+  //random number generator to select a tile in a sequence
   function numGen() {
     num = Math.floor((Math.random() * 4) + 1);
     return num;
   };
-
+  
+  //animate button lighting up
   function lightUp(input) {
     btnSound(input)
     $('#' + input).toggleClass('brighten');
@@ -46,7 +48,8 @@ $(document).ready(function() {
       $('#' + input).toggleClass('brighten');
     }, 500);
   }
-
+  
+  //function for animating the sequence
   function playSeq() {
     var i = 0;
     var animate = setInterval(function() {
@@ -57,7 +60,8 @@ $(document).ready(function() {
       }
     }, 800)
   }
-
+  
+  //computer adds new sequence and plays it
   function makeMove() {
     numGen();
     input = 'btn' + num;
@@ -66,6 +70,7 @@ $(document).ready(function() {
     playSeq();
   };
 
+  //alert game over then restarts
   function gameOver() {
     alert("Game Over!")
     sequence = [];
@@ -76,7 +81,8 @@ $(document).ready(function() {
       makeMove();
     }, 2000)
   };
-
+  
+  //check user input for correction, if incorrect, replays the sequence, if strict mode is on, game ends
   function checkSeq(i) {
     if (sequence[i] != userMove[i]) {
       audioBuzzer.play();
@@ -93,6 +99,7 @@ $(document).ready(function() {
     }
   };
 
+  //when user input is complete, check for win or go to next sequence
   function checkFull() {
     if (userMove.length === 20) {
       alert("You Win!")
@@ -112,6 +119,7 @@ $(document).ready(function() {
     }
   };
 
+  //user input
   $('.btn').click(function() {
     input = $(this).attr('id');
     userMove.push(input);
@@ -123,6 +131,7 @@ $(document).ready(function() {
     $(this).toggleClass('brighten')
   });
 
+  //reset button function
   $('#reset').click(function() {
     $('#counter').text(0);
     sequence = [];
@@ -133,6 +142,7 @@ $(document).ready(function() {
     }, 1000)
   });
 
+  //on off functions
   $('#start').on('click', function() {
     $('#start').toggleClass('on');
     if ($('#start').hasClass('on')) {
@@ -152,6 +162,8 @@ $(document).ready(function() {
       userMove = [];
       click = 0;
     }
+    
+    //strict mode on/off
     $('#strict').click(function() {
       $('#strict').toggleClass('strictOn');
     });
