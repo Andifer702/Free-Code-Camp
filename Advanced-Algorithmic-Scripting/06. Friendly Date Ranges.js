@@ -1,3 +1,10 @@
+//Convert a date range consisting of two dates formatted as YYYY-MM-DD into a more readable format.
+//The friendly display should use month names instead of numbers and ordinal dates instead of cardinal (1st instead of 1).
+//Do not display information that is redundant or that can be inferred by the user: 
+//if the date range ends in less than a year from when it begins, do not display the ending year.
+//Additionally, if the date range begins in the current year (i.e. it is currently the year 2016) and ends within one year, 
+//the year should not be displayed at the beginning of the friendly range.
+
 function makeFriendlyDates(arr) {
   var begDate = new Date(arr[0].split('-')), //put the array into dates format
       endDate = new Date(arr[1].split('-')),
