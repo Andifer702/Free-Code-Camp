@@ -1,3 +1,12 @@
+//Fill in the object constructor with the following methods below
+
+    //getFirstName()
+    //getLastName()
+    //getFullName()
+    //setFirstName(first)
+    //setLastName(last)
+    //setFullName(firstAndLast)
+    
 var Person = function(firstAndLast) {
     firstAndLast = firstAndLast.split(' ');
     var firstName = firstAndLast[0]; //assign first and last names separately
