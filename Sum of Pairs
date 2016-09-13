@@ -1,0 +1,17 @@
+//Given a list of integers and a single sum value, 
+//return the first two values (parse from the left please) in order of appearance that add up to form the sum.
+//in case of multiple pairs, pair with the lowest 2nd index number is the correct answer.
+
+
+
+var sum_pairs=function(ints, s){
+    //your code here
+    var output = [];
+    for(var i = 0; i < ints.length; i++){
+      for(var j = i + 1; j < ints.length; j++){
+        if(ints[i] + ints[j] === s){
+          output.push([ints[i], ints[j]);
+        }
+      }
+    } return output;
+}
